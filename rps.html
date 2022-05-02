@@ -1,3 +1,24 @@
 <!DOCTYPE html>
-<script></script>
+<head>
+    <script src="rps.js"></script>
+    <link rel="stylesheet" href="rps.css">
+</head>
+
+<body>
+    <!-- <input type="text" name="playerSelection" id="playerSelection"> -->
+<div class="container">
+    <div class="playerSelections">
+        <h2>Rock Paper Scissors</h2>
+        <button id="playerSelection1" value="Rock" onclick=rps(playerSelection1.value)>Rock</button>
+        <button id="playerSelection2" value="Paper" onclick=rps(playerSelection2.value)>Paper</button>
+        <button id="playerSelection3" value="Scissors" onclick=rps(playerSelection3.value)>Scissors</button>
+    </div>
+    <div class="result">
+        <span id="spanContent"></span>
+        <p>Score</p>
+        <span id="spanscore"></span>
+    </div>
+</div>
+</body>
+
 </html>

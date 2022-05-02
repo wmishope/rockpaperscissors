@@ -7,44 +7,67 @@ function computerPlay(){
 function playRound(playerSelection='Rock', computerSelection){
     playerSelection=playerSelection.toLowerCase();
     computerSelection=computerSelection.toLowerCase();
-    console.log(playerSelection)
-    console.log(computerSelection)
+
+    var result="";
+    var count=0;
+    if(playerSelection!='rock'&& playerSelection!='paper' && playerSelection!='scissors'){
+        return "Please select from Rock, Paper and Scissors only!";
+    }
    if(playerSelection!=computerSelection){
         if (playerSelection=='rock'){
             if (computerSelection=='scissors'){
-                console.log("You win.Rock beats Scissors");
+                result="You win! Rock beats Scissors";
+                count+=1;
             }
-            else{ console.log("You lose. Paper beats Rock");
+            else{ result="You lose :( Paper beats Rock";
+            
             }
         }
 
         if (playerSelection=='scissors'){
             if (computerSelection=='paper'){
-                console.log("You win.Scissors beats Paper.");
+                result="You win! Scissors beats Paper";
+                count+=1;
             }
-            else{ console.log("You lose. Rock beats Scissors");
+            else{ result="You lose :( Rock beats Scissors";
             }
         }
 
         if (playerSelection=='paper'){
             if (computerSelection=='rock'){
-                console.log("You win.Paper beats Rock.");
+                result="You win! Paper beats Rock";
+                count+=1;
             }
-            else{ console.log("You lose. Scissors beats Paper");
+            else{ result="You lose :( Scissors beat Paper";
             }
         }
     }
    
     else{
-        console.log("It is a draw.")
+        result="It is a draw"
     }
-
-     
-
+    return([result,count]);
+    
 };
 
 
-const playerSelection= 'Rock';
-const computerSelection=computerPlay();
+// const playerSelection= window.prompt("Rock,paper or scissors?");
 
-playRound(playerSelection,computerSelection);
+
+var score=0;
+
+function rps(inputValue){
+console.log(inputValue);
+
+const playerSelection= inputValue;
+const computerSelection=computerPlay();
+// var inputVal=document.getElementById("bttn1")
+
+result=playRound(playerSelection,computerSelection);
+score+=result[1];
+console.log(score);
+// document.getElementById('playerSelection').value=null;
+document.getElementById('spanContent').textContent=result[0];
+document.getElementById('spanscore').textContent=score;
+}
+
